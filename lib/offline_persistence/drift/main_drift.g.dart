@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'main.dart';
+part of 'main_drift.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -21,46 +21,6 @@ Map<String, dynamic> _$TodoToJson(_Todo instance) => <String, dynamic>{
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
-
-@ProviderFor(storage)
-const storageProvider = StorageProvider._();
-
-final class StorageProvider
-    extends
-        $FunctionalProvider<
-          AsyncValue<JsonSqFliteStorage>,
-          FutureOr<JsonSqFliteStorage>
-        >
-    with
-        $FutureModifier<JsonSqFliteStorage>,
-        $FutureProvider<JsonSqFliteStorage> {
-  const StorageProvider._()
-    : super(
-        from: null,
-        argument: null,
-        retry: null,
-        name: r'storageProvider',
-        isAutoDispose: true,
-        dependencies: null,
-        $allTransitiveDependencies: null,
-      );
-
-  @override
-  String debugGetCreateSourceHash() => _$storageHash();
-
-  @$internal
-  @override
-  $FutureProviderElement<JsonSqFliteStorage> $createElement(
-    $ProviderPointer pointer,
-  ) => $FutureProviderElement(pointer);
-
-  @override
-  FutureOr<JsonSqFliteStorage> create(Ref ref) {
-    return storage(ref);
-  }
-}
-
-String _$storageHash() => r'f0dc33f3f7b62aa7f1ecd8faff381278503b1b01';
 
 @ProviderFor(TodosNotifier)
 @JsonPersist()

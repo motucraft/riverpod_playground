@@ -1,7 +1,10 @@
 include: package:flutter_lints/flutter.yaml
 linter:
   rules:
+    - prefer_single_quotes
+    - unnecessary_parenthesis
     - prefer_const_constructors
+    - unawaited_futures
 analyzer:
   plugins:
     - custom_lint
