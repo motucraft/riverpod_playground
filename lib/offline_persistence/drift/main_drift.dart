@@ -79,7 +79,7 @@ class TodosNotifier extends _$TodosNotifier {
   @override
   FutureOr<List<Todo>> build() async {
     await persist(
-      storage: ref.watch(storageProvider.future),
+      ref.watch(storageProvider.future),
       options: const StorageOptions(cacheTime: StorageCacheTime.unsafe_forever),
     );
 

@@ -607,7 +607,7 @@ class $AppDatabaseManager {
 const databaseProvider = DatabaseProvider._();
 
 final class DatabaseProvider
-    extends $FunctionalProvider<AppDatabase, AppDatabase>
+    extends $FunctionalProvider<AppDatabase, AppDatabase, AppDatabase>
     with $Provider<AppDatabase> {
   const DatabaseProvider._()
     : super(
@@ -637,7 +637,7 @@ final class DatabaseProvider
   Override overrideWithValue(AppDatabase value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $ValueProvider<AppDatabase>(value),
+      providerOverride: $SyncValueProvider<AppDatabase>(value),
     );
   }
 }
@@ -648,7 +648,7 @@ String _$databaseHash() => r'd6e05638b723b0524e474cecb5226cbaac2e507a';
 const storageProvider = StorageProvider._();
 
 final class StorageProvider
-    extends $FunctionalProvider<DriftStorage, DriftStorage>
+    extends $FunctionalProvider<DriftStorage, DriftStorage, DriftStorage>
     with $Provider<DriftStorage> {
   const StorageProvider._()
     : super(
@@ -678,7 +678,7 @@ final class StorageProvider
   Override overrideWithValue(DriftStorage value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $ValueProvider<DriftStorage>(value),
+      providerOverride: $SyncValueProvider<DriftStorage>(value),
     );
   }
 }
