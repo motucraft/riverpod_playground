@@ -29,7 +29,7 @@ class OfflinePersistenceExample extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final todosAsync = ref.watch(todosNotifierProvider);
+    final todosAsync = ref.watch(todosProvider);
 
     return Scaffold(
       body: SafeArea(
@@ -53,7 +53,7 @@ class OfflinePersistenceExample extends ConsumerWidget {
         onPressed: () {
           final id = const UuidV7().generate();
           ref
-              .read(todosNotifierProvider.notifier)
+              .read(todosProvider.notifier)
               .add(Todo(id: id, description: 'New Todo', completed: false));
         },
         child: const Icon(Icons.add),
@@ -81,7 +81,7 @@ class TodosNotifier extends _$TodosNotifier {
     await persist(
       ref.watch(storageProvider.future),
       options: const StorageOptions(cacheTime: StorageCacheTime.unsafe_forever),
-    );
+    ).future;
 
     return state.value ?? [];
   }

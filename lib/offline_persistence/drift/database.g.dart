@@ -603,6 +603,9 @@ class $AppDatabaseManager {
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(database)
 const databaseProvider = DatabaseProvider._();
 
@@ -684,6 +687,3 @@ final class StorageProvider
 }
 
 String _$storageHash() => r'1b13665d2748323678c6f4e6639b6bb07ae57623';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
