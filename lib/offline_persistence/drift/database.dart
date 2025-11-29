@@ -34,7 +34,7 @@ class AppDatabase extends _$AppDatabase {
   }
 }
 
-class DriftStorage implements Storage<String, String> {
+final class DriftStorage extends Storage<String, String> {
   DriftStorage(this._db);
 
   final AppDatabase _db;
@@ -78,6 +78,14 @@ class DriftStorage implements Storage<String, String> {
     await (_db.delete(
       _db.jsonCacheTable,
     )..where((t) => t.key.equals(key))).go();
+  }
+
+  @override
+  FutureOr<void> deleteOutOfDate() async {
+    await (_db.delete(_db.jsonCacheTable)..where(
+          (t) => t.expireAt.isSmallerThan(Constant(clock.now().toUtc())),
+        ))
+        .go();
   }
 }
 
