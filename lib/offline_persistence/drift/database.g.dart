@@ -607,12 +607,12 @@ class $AppDatabaseManager {
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(database)
-const databaseProvider = DatabaseProvider._();
+final databaseProvider = DatabaseProvider._();
 
 final class DatabaseProvider
     extends $FunctionalProvider<AppDatabase, AppDatabase, AppDatabase>
     with $Provider<AppDatabase> {
-  const DatabaseProvider._()
+  DatabaseProvider._()
     : super(
         from: null,
         argument: null,
@@ -648,12 +648,12 @@ final class DatabaseProvider
 String _$databaseHash() => r'd6e05638b723b0524e474cecb5226cbaac2e507a';
 
 @ProviderFor(storage)
-const storageProvider = StorageProvider._();
+final storageProvider = StorageProvider._();
 
 final class StorageProvider
     extends $FunctionalProvider<DriftStorage, DriftStorage, DriftStorage>
     with $Provider<DriftStorage> {
-  const StorageProvider._()
+  StorageProvider._()
     : super(
         from: null,
         argument: null,
