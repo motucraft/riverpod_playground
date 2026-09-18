@@ -567,7 +567,16 @@ class $$JsonCacheTableTableTableManager
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0
-              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .map(
+                (e) => (
+                  e.readTable<$JsonCacheTableTable, JsonCacheTableData>(table),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $JsonCacheTableTable,
+                    JsonCacheTableData
+                  >(db, table, e),
+                ),
+              )
               .toList(),
           prefetchHooksCallback: null,
         ),
